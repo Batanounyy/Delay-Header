@@ -70,10 +70,12 @@ int main() {
 ---
 
 ## **Important Notes** 
+
 `#include <iostream>` Placement: For the countdown functions (`delay_s_counter` and `delay_s_counterErr`), `<iostream>` is included within the function body in `delay.h`. For larger projects and best practice, consider moving all general includes like `<iostream>` to the top of `delay.h` or ensure they are included in your `main.cpp` files.
 Nanosecond Precision (`delay_ns`): While you can specify nanoseconds, the actual sleep precision is limited by the operating system's timer resolution. Don't expect true nanosecond accuracy for the sleep duration. 
 ---
 ## **Why Use this** 
+
 While `std::this_thread::sleep_for` from `<thread>` and `<chrono>` is powerful, this `delay.h` header provides:
 Convenience: Simple, direct function calls for common time units.
 Readability: `Delay::delay_s(5)` can be more immediately clear than the full `std::this_thread::sleep_for(std::chrono::seconds(5))`.
